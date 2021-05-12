@@ -7,6 +7,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lego2java</name>
 
+	<properties>
+		<jdk.version>11</jdk.version>
+	</properties>
+
 	<repositories>
 		<repository>
 			<id>jitpack.io</id>
@@ -20,11 +24,16 @@
 			<artifactId>ev3dev-lang-java</artifactId>
 			<version>2.5.3</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.6</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
-	
-	<properties>
-		<jdk.version>1.11</jdk.version>
-	</properties>
 
 	<build>
 		<finalName>lego2java</finalName>
@@ -32,13 +41,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.8.1</version>
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
